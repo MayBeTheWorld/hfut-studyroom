@@ -1,3 +1,12 @@
+export interface AdminProps {
+  username: string
+  password: string
+}
+
+export interface StudentNumber {
+  studentId: string
+}
+
 export interface LoginProps {
   studentId: string
   password: string

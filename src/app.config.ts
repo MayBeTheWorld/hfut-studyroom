@@ -2,13 +2,13 @@ export default {
   pages: [
     'pages/index/index',
     'pages/seatselect/seatselect',
-    'pages/seatReport/seatReport',
-    'pages/seatReport/seatselect',
     'pages/user/user',
     'pages/user/history/history',
     'pages/user/help/help',
     'pages/user/about/about',
-    'pages/login/login'
+    'pages/login/login',
+    'pages/admin/adminIndex/adminIndex',
+    'pages/admin/adminLogin/adminLogin'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -36,7 +36,5 @@ export default {
     ]
   },
   debug: false,
-  navigateToMiniProgramAppIdList: [
-    "wx8abaf00ee8c3202e"
-  ]
+  navigateToMiniProgramAppIdList: ['wx8abaf00ee8c3202e']
 }

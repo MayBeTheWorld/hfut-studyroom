@@ -11,6 +11,7 @@
   "scripts": {
     "build": "taro build --type weapp",
     "dev": "npm run build -- --watch",
+    "dev:h5": "taro build --type h5 --watch",
     "prepare": "husky install"
   },
   "browserslist": [

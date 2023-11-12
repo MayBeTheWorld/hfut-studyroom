@@ -5,7 +5,7 @@ export default function WrappedTextarea({ onInput, placeholder }) {
   return (
     <Textarea
       className="input flex-grow"
-      style={{ height: '560rpx', width: 'auto' }}
+      style={{ height: '280px', width: 'auto' }}
       placeholder={placeholder}
       onInput={(e) => onInput(e)}
     ></Textarea>

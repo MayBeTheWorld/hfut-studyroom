@@ -1,8 +1,8 @@
 {
-  "miniprogramRoot": "dist/",
+  "miniprogramRoot": "dist/weapp/",
   "projectname": "hfut-studyroom",
   "description": "",
-  "appid": "touristappid",
+  "appid": "wxbf5d3fb8be31f377",
   "setting": {
     "urlCheck": true,
     "es6": false,

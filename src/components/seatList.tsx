@@ -79,7 +79,10 @@ export function SeatList({
       {seatsInfo && (
         <View className="p-2">
           {seatsInfo.map((layer) => (
-            <View className="container flex flex-col mt-4" key={layer.floorNum}>
+            <View
+              className="container mx-auto flex flex-col mt-4"
+              key={layer.floorNum}
+            >
               <View>
                 <Text className="text-lg my-2">第{layer.floorNum}层自习室</Text>
               </View>
@@ -117,7 +120,7 @@ export function SeatList({
               </View>
             </View>
           ))}
-          <View className="my-4 px-4">
+          <View className="my-4 ">
             <Button className="button" onClick={handleSubmit}>
               确认
             </Button>

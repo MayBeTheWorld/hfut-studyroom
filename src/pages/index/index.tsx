@@ -14,26 +14,28 @@ export default function Index() {
   const [title, setTitle] = useState('')
   useEffect(() => {
     getBanners().then((res) => {
+      console.log('banners')
+      console.log(res.data)
       setBanner(res.data.data.picture)
     })
     getAppName().then((res) => {
+      console.log('appName')
+      console.log(res.data)
       setTitle(res.data.data)
     })
   }, [])
 
   const handleReport = () => {
-    getTimeList().then((res) => {
-      if (res.data.code === 0) {
-        const curr = res.data.data[0]
-        Taro.navigateTo({
-          url: `/pages/seatReport/seatselect?timeId=${curr.times[0].id}&appointmentDate=${curr.date}`
-        })
-      }
+    Taro.showModal({
+      title: '提示',
+      content: '请联系管理员解决',
+      showCancel: false,
+      success: function () {}
     })
   }
 
   return (
-    <View className="container">
+    <View className="container mx-auto">
       <View className="px-4">
         <Nav>
           <View className="flex flex-col mt-3">
@@ -44,7 +46,7 @@ export default function Index() {
         <View className="rounded shadow-sm">
           {banner ? (
             <Image
-              style="width: 100%;height: 250rpx;"
+              style="width: 100%;height: 125px;"
               src={BASE_URL + '/' + banner}
               mode="aspectFill"
               className="card mt-2"
@@ -57,10 +59,10 @@ export default function Index() {
         <Assignment />
         <View className="text-center mt-4">
           <Text
-            className="text-red-600 font-bold text-lg"
+            className="text-red-300 font-bold text-lg"
             onClick={() => handleReport()}
           >
-            占座举报
+            发现占座
           </Text>
         </View>
         <Footer />

@@ -12,7 +12,7 @@ export default function History() {
     })
   }, [])
   return assignmentList.length > 0 ? (
-    <View className="container">
+    <View className="container mx-auto">
       <View className="p-4">
         {assignmentList.map((item) => (
           <View

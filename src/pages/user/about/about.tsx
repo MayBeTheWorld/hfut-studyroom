@@ -14,7 +14,7 @@ export default function About() {
     })
   }, [])
   return (
-    <View className="container">
+    <View className="container mx-auto">
       <View className="p-4 flex flex-col h-screen">
         <View className="flex flex-col items-center mb-4">
           <Image src={ico} style="width: 128px;height: 128px;" />

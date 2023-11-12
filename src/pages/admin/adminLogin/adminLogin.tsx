@@ -1,31 +1,23 @@
-import Nerv, { useState, useEffect } from 'nervjs'
+import Nerv from 'nervjs'
 import Taro from '@tarojs/taro'
 import { View, Text, Input, Button, Form } from '@tarojs/components'
-import { login } from '../../api/api'
-import { LoginProps } from '../../api/Iapi'
-import { BASE_URL } from '../../api/http'
+import { adminLogin } from '../../../api/api'
+import { AdminProps } from '../../../api/Iapi'
+import { BASE_URL } from '../../../api/http'
 
 export default function Login() {
-  const [token, setToken] = useState()
-  useEffect(() => {
-    if (token === undefined) return
-    Taro.setStorage({
-      key: 'token',
-      data: token
-    }).then(() => {
-      Taro.reLaunch({
-        url: '/pages/index/index'
-      })
-    })
-  }, [token])
   const handleLogin = (e) => {
     Taro.showLoading({
       title: '登录中'
     })
-    login(e.detail.value as LoginProps).then((res) => {
+    // 管理员使用属性与登录属性不同
+    console.log('管理员登录')
+    adminLogin(e.detail.value as AdminProps).then((res) => {
       Taro.hideLoading()
       if (res.data.code === 0) {
-        setToken(res.data.data.token)
+        Taro.reLaunch({
+          url: '/pages/admin/adminIndex/adminIndex'
+        })
       } else {
         Taro.showToast({
           title: res.data.msg,
@@ -46,15 +38,15 @@ export default function Login() {
         <View className="flex flex-col justify-center h-full">
           <View className="flex flex-col">
             <Text className="text-3xl font-bold">登录</Text>
-            <Text className="font-medium">绑定信息门户</Text>
+            <Text className="font-medium">管理员账号</Text>
           </View>
           <Form onSubmit={handleLogin}>
             <View className="mt-8 flex flex-col justify-center">
               <View>
                 <Input
                   className="input"
-                  name="studentId"
-                  placeholder="请输入学号"
+                  name="username"
+                  placeholder="请输入账号"
                 ></Input>
               </View>
               <View className="mt-4">
@@ -75,14 +67,6 @@ export default function Login() {
             </Button>
           </Form>
         </View>
-
-        <Text
-          className="text-center text-sm font-medium mb-8"
-          style={{ color: '#385FB0' }}
-          onClick={() => Taro.navigateTo({ url: '/pages/user/help/help' })}
-        >
-          遇到问题
-        </Text>
       </View>
     </View>
   )

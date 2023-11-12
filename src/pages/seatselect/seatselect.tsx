@@ -40,7 +40,7 @@ export default function SeatSelect() {
     })
 
   return (
-    <View className="container">
+    <View className="container mx-auto">
       <SeatList
         handleSelectSeat={handleSelectSeat}
         selectedSeat={selectedSeat}

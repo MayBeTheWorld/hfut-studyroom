@@ -1,6 +1,13 @@
 import { RequestTask } from '@tarojs/taro'
 import { get, post, uploadFile } from './http'
-import { LoginProps, IRecentStatus, IStudentInfo, ITime } from './Iapi'
+import {
+  LoginProps,
+  AdminProps,
+  IRecentStatus,
+  IStudentInfo,
+  ITime,
+  StudentNumber
+} from './Iapi'
 
 interface BaseResp<T> {
   code: Number
@@ -12,6 +19,29 @@ export function login(loginProps: LoginProps): RequestTask<BaseResp<Object>> {
   return post({
     url: '/login',
     data: loginProps
+  })
+}
+
+// 管理员账号登录接口
+export function adminLogin(
+  adminProps: AdminProps
+): RequestTask<BaseResp<Object>> {
+  console.log('adminProps')
+  console.log(adminProps)
+  return post({
+    url: '/adminLogin',
+    data: adminProps
+  })
+}
+
+// 学生账号重置接口
+export function resetPassword(
+  studentNumber: StudentNumber
+): RequestTask<BaseResp<Object>> {
+  console.log(studentNumber)
+  return post({
+    url: '/resetPassword',
+    data: studentNumber
   })
 }
 

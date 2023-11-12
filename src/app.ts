@@ -12,29 +12,32 @@ class App extends Component {
   }
 
   onLaunch() {
-    const updateManager = Taro.getUpdateManager()
-    updateManager.onCheckForUpdate(function (res) {
-      console.log(res.hasUpdate)
-    })
-    updateManager.onUpdateReady(function () {
-      Taro.showModal({
-        title: '更新提示',
-        content: '小程序已更新，请重启以应用新版本',
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            updateManager.applyUpdate()
-          }
-        }
+    // 条件编译，updateManager网页端无
+    if (process.env.TARO_ENV === 'weapp') {
+      const updateManager = Taro.getUpdateManager()
+      updateManager.onCheckForUpdate(function (res) {
+        console.log(res.hasUpdate)
       })
-    })
+      updateManager.onUpdateReady(function () {
+        Taro.showModal({
+          title: '更新提示',
+          content: '小程序已更新，请重启以应用新版本',
+          showCancel: false,
+          success: function (res) {
+            if (res.confirm) {
+              updateManager.applyUpdate()
+            }
+          }
+        })
+      })
+    }
   }
 
-  componentDidShow() { }
+  componentDidShow() {}
 
-  componentDidHide() { }
+  componentDidHide() {}
 
-  componentDidCatchError() { }
+  componentDidCatchError() {}
 
   // this.props.children 是将要会渲染的页面
   render() {

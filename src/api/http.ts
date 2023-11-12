@@ -1,6 +1,9 @@
 import Taro from '@tarojs/taro'
 
-export const BASE_URL: string = 'https://wechat.newxstudio.com'
+// export const BASE_URL: string = 'https://wechat.newxstudio.com'
+// 校园内服务器
+export const BASE_URL: string = 'http://172.18.6.56:8024/'
+// export const BASE_URL: string = 'http://8.130.51.231:8024/'
 
 const AuthInterceptor = (chain) => {
   const requestParams = chain.requestParams

@@ -71,15 +71,16 @@ export default function User() {
     })
   }
 
-  const toTucao = () => Taro.navigateToMiniProgram({
-    appId: 'wx8abaf00ee8c3202e',
-    extraData : {
-      id: "384120",
-    }
-  })
+  const toTucao = () =>
+    Taro.navigateToMiniProgram({
+      appId: 'wx8abaf00ee8c3202e',
+      extraData: {
+        id: '384120'
+      }
+    })
 
   return (
-    <View className="container">
+    <View className="container mx-auto">
       <View className="px-4 mt-16">
         <View className="flex p-4 items-center">
           <AtAvatar size="large" openData={{ type: 'userAvatarUrl' }} />
@@ -122,12 +123,11 @@ export default function User() {
               />
             ))}
             <AtListItem
-              title='使用反馈'
-              arrow='right'
+              title="使用反馈"
+              arrow="right"
               onClick={() => toTucao()}
               hasBorder={false}
-              >
-            </AtListItem>
+            ></AtListItem>
           </AtList>
         </View>
         <View className="text-center mt-4">
