@@ -9,8 +9,9 @@
     "css": "sass"
   },
   "scripts": {
-    "build": "taro build --type weapp",
+    "build": "taro build --type",
     "dev": "npm run build -- --watch",
+    "dev:weapp": "taro build --type weapp --watch",
     "dev:h5": "taro build --type h5 --watch",
     "prepare": "husky install"
   },

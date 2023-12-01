@@ -13,7 +13,7 @@ export default function Help() {
     })
   }, [])
   return (
-    <View className="container mx-auto flex flex-col h-screen">
+    <View className="container flex flex-col h-screen">
       <View className="p-4">
         {helps.map((item) => (
           <View className="card mb-4 px-4 py-2" key={item.id}>
@@ -30,13 +30,13 @@ export default function Help() {
         ))}
       </View>
       <Text
-        className="text-center text-sm font-medium mb-8"
+        className="text-center text-sm font-medium pb-4"
         style={{ color: '#385FB0' }}
         onClick={() =>
           Taro.navigateTo({ url: '/pages/admin/adminLogin/adminLogin' })
         }
       >
-        管理登录
+        管理员登录
       </Text>
     </View>
   )

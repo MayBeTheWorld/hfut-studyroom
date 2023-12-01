@@ -25,15 +25,6 @@ export default function Index() {
     })
   }, [])
 
-  const handleReport = () => {
-    Taro.showModal({
-      title: '提示',
-      content: '请联系管理员解决',
-      showCancel: false,
-      success: function () {}
-    })
-  }
-
   return (
     <View className="container mx-auto">
       <View className="px-4">
@@ -57,14 +48,6 @@ export default function Index() {
         </View>
         <AssignmentStatus />
         <Assignment />
-        <View className="text-center mt-4">
-          <Text
-            className="text-red-300 font-bold text-lg"
-            onClick={() => handleReport()}
-          >
-            发现占座
-          </Text>
-        </View>
         <Footer />
       </View>
     </View>

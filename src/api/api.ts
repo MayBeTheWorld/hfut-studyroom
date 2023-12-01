@@ -50,6 +50,7 @@ export function getSeatsList(timeId, appointmentDate) {
     timeId: timeId,
     appointmentDate: appointmentDate
   }
+  console.log(data, 'data')
   return get({
     url: '/student/appointment/info',
     data: data

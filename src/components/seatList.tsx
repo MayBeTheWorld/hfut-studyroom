@@ -27,6 +27,7 @@ export function SeatList({
   const [seatsInfo, setseatsInfo] = useState()
   useEffect(() => {
     getSeatsList(appointmentData.timeId, appointmentData.date).then((res) => {
+      console.log(res.data)
       if (res.data.code === 0) {
         let data = res.data.data.data
         data.forEach((d) => {
@@ -107,6 +108,7 @@ export function SeatList({
                         ) : (
                           <View
                             className="h-6 w-6 rounded-t"
+                            // 利用后端传递的数据中的 state 字段判断座位状态
                             style={{ backgroundColor: seatColors[seat.state] }}
                           ></View>
                         )}

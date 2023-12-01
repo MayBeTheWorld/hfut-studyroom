@@ -45,7 +45,7 @@
   "simulatorPluginLibVersion": {},
   "libVersion": "2.19.4",
   "condition": {},
-  "srcMiniprogramRoot": "dist/",
+  "srcMiniprogramRoot": "dist/weapp/",
   "packOptions": {
     "ignore": [],
     "include": []

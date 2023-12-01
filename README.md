@@ -17,13 +17,15 @@ yarn install
 ### 调试
 
 ```shell
-yarn dev weapp
+yarn dev:weapp
+yarn dev:h5
 ```
 
 ### 编译
 
 ```shell
 yarn build weapp
+yarb build h5
 ```
 
 ### 部署和发布
