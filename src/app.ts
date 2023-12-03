@@ -15,9 +15,7 @@ class App extends Component {
     // 条件编译，updateManager网页端无
     if (process.env.TARO_ENV === 'weapp') {
       const updateManager = Taro.getUpdateManager()
-      updateManager.onCheckForUpdate(function (res) {
-        console.log(res.hasUpdate)
-      })
+      updateManager.onCheckForUpdate(function (res) {})
       updateManager.onUpdateReady(function () {
         Taro.showModal({
           title: '更新提示',

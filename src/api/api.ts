@@ -26,8 +26,6 @@ export function login(loginProps: LoginProps): RequestTask<BaseResp<Object>> {
 export function adminLogin(
   adminProps: AdminProps
 ): RequestTask<BaseResp<Object>> {
-  console.log('adminProps')
-  console.log(adminProps)
   return post({
     url: '/adminLogin',
     data: adminProps
@@ -38,7 +36,6 @@ export function adminLogin(
 export function resetPassword(
   studentNumber: StudentNumber
 ): RequestTask<BaseResp<Object>> {
-  console.log(studentNumber)
   return post({
     url: '/resetPassword',
     data: studentNumber
@@ -50,7 +47,6 @@ export function getSeatsList(timeId, appointmentDate) {
     timeId: timeId,
     appointmentDate: appointmentDate
   }
-  console.log(data, 'data')
   return get({
     url: '/student/appointment/info',
     data: data

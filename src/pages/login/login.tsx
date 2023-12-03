@@ -49,17 +49,17 @@ export default function Login() {
             <Text className="font-medium">绑定信息门户</Text>
           </View>
           <Form onSubmit={handleLogin}>
-            <View className="mt-8 flex flex-col justify-center">
+            <View className="px-1 mt-8 flex flex-col justify-center">
               <View>
                 <Input
-                  className="input"
+                  className="input flex flex-col justify-center"
                   name="studentId"
                   placeholder="请输入学号"
                 ></Input>
               </View>
               <View className="mt-4">
                 <Input
-                  className="input"
+                  className="input flex flex-col justify-center"
                   name="password"
                   password
                   placeholder="请输入密码"

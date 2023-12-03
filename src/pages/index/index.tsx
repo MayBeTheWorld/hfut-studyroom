@@ -14,13 +14,9 @@ export default function Index() {
   const [title, setTitle] = useState('')
   useEffect(() => {
     getBanners().then((res) => {
-      console.log('banners')
-      console.log(res.data)
       setBanner(res.data.data.picture)
     })
     getAppName().then((res) => {
-      console.log('appName')
-      console.log(res.data)
       setTitle(res.data.data)
     })
   }, [])

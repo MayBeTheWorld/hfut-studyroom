@@ -65,7 +65,6 @@ export default function User() {
             })
           )
         } else if (res.cancel) {
-          console.log('用户点击取消')
         }
       }
     })

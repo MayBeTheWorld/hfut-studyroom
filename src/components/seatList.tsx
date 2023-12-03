@@ -27,7 +27,6 @@ export function SeatList({
   const [seatsInfo, setseatsInfo] = useState()
   useEffect(() => {
     getSeatsList(appointmentData.timeId, appointmentData.date).then((res) => {
-      console.log(res.data)
       if (res.data.code === 0) {
         let data = res.data.data.data
         data.forEach((d) => {

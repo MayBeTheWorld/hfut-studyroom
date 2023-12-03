@@ -17,13 +17,10 @@ export default function Admin() {
     })
   }, [])
   const handleReset = (e) => {
-    console.log(e.detail.value)
     Taro.showLoading({
       title: '重置中'
     })
     resetPassword(e.detail.value as StudentNumber).then((res) => {
-      console.log('happen3')
-      console.log(res)
       Taro.hideLoading()
       if (res.data.code === 0) {
         Taro.showToast({
