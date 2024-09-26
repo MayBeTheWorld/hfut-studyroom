@@ -6,7 +6,7 @@
 
 本项目使用 Taro + Nerv + TaroUI 构建
 
-### 安装依赖
+### 拉取项目并安装依赖
 
 ```shell
 git clone https://github.com/HFUT-Newx/hfut-studyroom.git
